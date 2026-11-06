@@ -35,12 +35,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
+    'rolepermissions',
+
+   'core.apps.CoreConfig',
+   'categories.apps.CategoriesConfig',
 ]
 
 MIDDLEWARE = [
@@ -135,6 +142,9 @@ STATIC_URL = 'static/'
 
 MAILERS = {
     'default': {
-        'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        'BACKEND': "django.core.mail.backends.console.EmailBackend"
     },
 }
+
+ROLEPERMISSIONS_MODULE = "demoApp.roles"
+ROLEPERMISSIONS_REGISTER_ADMIN = True
